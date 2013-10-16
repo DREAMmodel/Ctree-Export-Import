@@ -1,7 +1,7 @@
 library(partykit)
 library(Formula)
 
-## Danne party-objekt for CTREE-beslutningstr?
+## Makes party-object for CTREE
 nodeCount <- 0
 partyToFile_split = function(node, hFile, pr)
 {
@@ -123,11 +123,11 @@ partyToFile = function(p, fileName)
 }
 
 
-## Beregne sandsynligheder med CTREE-beslutningstr? - indeholdt i party-object
-# Input:     party-objekt
+## Calculates probabilities using the ctree - Part of the party-object
+# Input:     party-object
 # includeID: If true, include terminal node id's in data.frame
-# Output:    data.frame, der indeholder alle terminal nodes. I hver linje optr?der 
-#            sandsynligheder (to eller flere) og node-number.
+# Output:    data.frame, containing all terminal nodes. Each line contains 
+#            probabilities (two or more) and node number.
 GetProbabilities = function(partyObj, includeID=FALSE)
 {
   term_nodes = nodeids(partyObj, terminal = T)
@@ -137,7 +137,7 @@ GetProbabilities = function(partyObj, includeID=FALSE)
 }
 
 
-# Beregning af sandsynligheder, som skrives til fil
+# Misc help-functions
 calcProb = function(d)
 {
   
