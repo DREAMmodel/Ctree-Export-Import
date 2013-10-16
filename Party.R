@@ -34,41 +34,6 @@ partyToFile_split = function(node, hFile, pr)
   
 }
 
-partyToFile_OLD = function(p, fileName)
-{
-
-  if(!is(p, "party"))
-    return("Error in partyToFile: Not party object")
-  
-  print("Calculating probabilities...", quote=F)
-  pr = GetProbabilities(p)    
-
-  print("Writing to file...", quote=F )
-  hFile = file(fileName, "w")
-
-  nodeCount <<- 0
-  
-  data = p$data
-  
-  # Number of variables
-  cat("Rank        \t", length(data[1, ]) - 1, "\n", file = hFile, sep = "")
-  
-  cat("lengthY  ",  "\t", length(levels(data[ ,1])), "\n", file = hFile, sep = "")
-  
-  for(i in 2:length(data[1, ]))
-    cat("lengthX", i-1,  "\t", length(levels(data[ ,i])), "\n", file = hFile, sep = "")
-    cat("============================",                "\n", file = hFile, sep = "")
-
-  
-  
-  # Start the recursive fun!
-  partyToFile_split(p$node, hFile, pr)
-  
-  close(hFile)
-  print("Done.", quote=F )
-  
-}
-
 partyToFile = function(p, fileName)
 {
   
