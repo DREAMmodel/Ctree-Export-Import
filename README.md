@@ -8,4 +8,4 @@ Ctrees are Conditional Inference Trees as described in the R package partykit (s
 Party.R contains the R-functions
 exportCtreeExample.r contains example code on how to create a ctree using partykit and export it to a txt-file.
 
-The folder "ImportCtree" contains the C# code that can be used to import the ctree in C#-programs and an interface to look up values in the tree.
+The folder "ImportTreeInCSharp" contains the C# code that can be used to import the ctree in C#-programs and an interface to look up values in the tree. See the readme.txt-file in "ImportTreeInCSharp/" for sample code.
